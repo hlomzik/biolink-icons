@@ -18,57 +18,57 @@
 .band.from::before {
   content: '';
   display: block;
-  width: 1em;
-  height: 1em;
+  width: 0.8em;
+  height: 0.8em;
+  transform: translate(-0.4em, -0.4em);
   background: black;
   position: absolute;
-  left: 1em;
-  top: 5.5em;
+  left: 1.5em;
+  top: 6em;
   border-radius: 50%;
   animation: band-sharing 3s infinite; }
 
 @keyframes band-sharing {
   8% {
-    left: 1em;
+    left: 1.5em;
     box-shadow: 0 0 transparent; }
   10% {
-    left: 3.5em;
+    left: 4em;
     box-shadow: -2.5em 0 grey; }
   17% {
     box-shadow: -2.5em 0 transparent; }
   17.9% {
     box-shadow: 0 0 transparent; }
   18% {
-    left: 3.5em;
+    left: 4em;
     box-shadow: 0 0 transparent; }
   20% {
-    left: 5.5em;
+    left: 6em;
     box-shadow: -2em 0 grey; }
   27% {
     box-shadow: -2em 0 transparent; }
   27.9% {
     box-shadow: 0 0 transparent; }
   28% {
-    left: 5.5em;
+    left: 6em;
     box-shadow: 0 0 transparent; }
   30% {
-    left: 7.5em;
+    left: 8em;
     box-shadow: -2em 0 grey; }
   37% {
     box-shadow: -2em 0 transparent; }
   37.9% {
     box-shadow: 0 0 transparent; }
   38% {
-    left: 7.5em;
+    left: 8em;
     box-shadow: 0 0 transparent; }
   40% {
-    left: 10em;
+    left: 10.5em;
     box-shadow: -2.5em 0 grey; }
   47% {
     box-shadow: -2.5em 0 transparent; }
   47.9% {
     box-shadow: 0 0 transparent; }
   90% {
-    left: 10em;
+    left: 10.5em;
     box-shadow: 0 0 transparent; } }
-
