@@ -1,5 +1,5 @@
 $r: 0.4em;
-$positions: 1.5 4 6 8 10.5;
+$positions: 1.5em 4em 6em 8em 10.5em;
 $size: 12em;
 
 .sharing { width: $size; height: $size; position: relative; }
@@ -14,14 +14,14 @@ $size: 12em;
   transform: translate(-$r, -$r);
   background: black;
   position: absolute;
-  left: #{nth($positions, 1)}em;
+  left: nth($positions, 1);
   top: $size / 2;
   border-radius: 50%;
 }
 
 @for $i from 1 to 5 {
   .sharing:hover .dot#{$i} {
-    left: #{nth($positions, $i)}em;
+    left: nth($positions, $i);
     animation: band-sharing #{if($i == 1, 1.6, 1)}s #{if($i == 1, 0, 0.2) + $i * 0.1}s;
   }
 }
