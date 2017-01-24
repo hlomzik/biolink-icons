@@ -7,45 +7,27 @@ $size: 12em;
 .band.to { right: 0; }
 .band svg { width: 100%; height: 100%; }
 
-.band.from::before {
-  content: '';
-  display: block;
+.sharing:hover .dot {
+  opacity: 0;
   width: $r * 2;
   height: $r * 2;
   transform: translate(-$r, -$r);
   background: black;
   position: absolute;
-  left:  #{nth($positions, 1)}em;
+  left: #{nth($positions, 1)}em;
   top: $size / 2;
   border-radius: 50%;
-  animation: band-sharing 3s infinite;
+}
+
+@for $i from 1 to 5 {
+  .sharing:hover .dot#{$i} {
+    left: #{nth($positions, $i)}em;
+    animation: band-sharing #{if($i == 1, 1.6, 1)}s #{if($i == 1, 0, 0.2) + $i * 0.1}s;
+  }
 }
 
 @keyframes band-sharing {
-  $start: 8;
-  $step: 10;
-  $fade: grey;
-
-  @for $i from 1 to length($positions) {
-    $p: $start + $step * ($i - 1);
-    $from: nth($positions, $i);
-    $to: nth($positions, $i + 1);
-
-    #{$p}% {
-      left: #{$from}em;
-      box-shadow: 0 0 transparent;
-    }
-    #{$p + 2}% {
-      left: #{$to}em;
-      box-shadow: #{$from - $to}em 0 $fade;
-    }
-    #{$p + $step - 1}% {
-      box-shadow: #{$from - $to}em 0 transparent;
-    }
-    #{$p + $step - 0.1}% {
-      box-shadow: 0 0 transparent;
-    }
-  }
-
-  90% { left: #{nth($positions, length($positions))}em; box-shadow: 0 0 transparent; }
+  from    { opacity: 0; transform: scale(0.5), translate(-$r / 2, -$r / 2); }
+  8%, 10% { opacity: 1; transform: scale(1),   translate(-$r, -$r); }
+  50%, to { opacity: 0; transform: scale(0.7), translate(-$r * 0.7, -$r * 0.7); }
 }
