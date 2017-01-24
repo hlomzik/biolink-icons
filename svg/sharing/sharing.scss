@@ -1,0 +1,47 @@
+.sharing { width: 12em; height: 12em; position: relative; }
+.band { width: 3em; height: 12em; position: absolute; }
+.band.to { right: 0; }
+.band svg { width: 100%; height: 100%; }
+
+.band.from::before {
+  content: '';
+  display: block;
+  width: 1em;
+  height: 1em;
+  background: black;
+  position: absolute;
+  left: 1em;
+  top: 5.5em;
+  border-radius: 50%;
+  animation: band-sharing 3s infinite;
+}
+
+@keyframes band-sharing {
+  $positions: 1 3.5 5.5 7.5 10;
+  $start: 8;
+  $step: 10;
+  $fade: grey;
+
+  @for $i from 1 to length($positions) {
+    $p: $start + $step * ($i - 1);
+    $from: nth($positions, $i);
+    $to: nth($positions, $i + 1);
+
+    #{$p}% {
+      left: #{$from}em;
+      box-shadow: 0 0 transparent;
+    }
+    #{$p + 2}% {
+      left: #{$to}em;
+      box-shadow: #{$from - $to}em 0 $fade;
+    }
+    #{$p + $step - 1}% {
+      box-shadow: #{$from - $to}em 0 transparent;
+    }
+    #{$p + $step - 0.1}% {
+      box-shadow: 0 0 transparent;
+    }
+  }
+
+  90% { left: 10em;  box-shadow: 0 0 transparent; }
+}
