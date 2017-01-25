@@ -1,3 +1,22 @@
+.signal {
+  position: absolute;
+  left: -4em;
+  width: 11em;
+  opacity: 0; }
+
+.signal svg {
+  width: 100%;
+  fill: none;
+  stroke-width: 6px;
+  stroke: #333;
+  stroke-linecap: round; }
+
+@keyframes signal {
+  from, 70%, to {
+    opacity: 0; }
+  30% {
+    opacity: 1; } }
+
 .band, .card:hover {
   border: 0.45em solid #333;
   width: 3em;
@@ -29,6 +48,12 @@
     line-height: 0.8em;
     color: #333;
     transform: scale(1, 1); }
+  .band .signal1, .card:hover .signal1 {
+    animation: signal 0.8s 0.6s infinite; }
+  .band .signal2, .card:hover .signal2 {
+    animation: signal 0.8s 0.8s infinite; }
+  .band .signal3, .card:hover .signal3 {
+    animation: signal 0.8s 1s infinite; }
 
 .card, .band:hover {
   border: 0.45em solid #333;
