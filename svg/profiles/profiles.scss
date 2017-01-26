@@ -1,0 +1,48 @@
+.profile {
+  position: relative;
+  width: 10em;
+  height: 10em;
+  
+  svg { width: 100%; }
+
+  .user {
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    width: 8em;
+  }
+
+  .tie, .hat, .glass {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .tie {
+    top: 6.7em;
+    left: 4.2em;
+    width: 1.6em;
+  }
+
+  .hat {
+    top: 0.4em;
+    left: 2.5em;
+    width: 5em;
+  }
+
+  .glass {
+    top: 3.5em;
+    left: 3.3em;
+    width: 3.4em;
+  }
+
+  &:hover {
+    .tie   { animation: profile-blink 3s 0s infinite; }
+    .glass { animation: profile-blink 3s 1s infinite; }
+    .hat   { animation: profile-blink 3s 2s infinite; }
+  }
+}
+
+@keyframes profile-blink {
+  from, 33%, to { opacity: 0; }
+  4%, 30% { opacity: 1; }
+}
