@@ -1,0 +1,38 @@
+.profile {
+  position: relative;
+  width: 10em;
+  height: 10em; }
+  .profile svg {
+    width: 100%; }
+  .profile .user {
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    width: 8em; }
+  .profile .tie, .profile .hat, .profile .glass {
+    position: absolute;
+    opacity: 0; }
+  .profile .tie {
+    top: 6.7em;
+    left: 4.2em;
+    width: 1.6em; }
+  .profile .hat {
+    top: 0.4em;
+    left: 2.5em;
+    width: 5em; }
+  .profile .glass {
+    top: 3.5em;
+    left: 3.3em;
+    width: 3.4em; }
+  .profile:hover .tie {
+    animation: profile-blink 3s 0s infinite; }
+  .profile:hover .glass {
+    animation: profile-blink 3s 1s infinite; }
+  .profile:hover .hat {
+    animation: profile-blink 3s 2s infinite; }
+
+@keyframes profile-blink {
+  from, 33%, to {
+    opacity: 0; }
+  4%, 30% {
+    opacity: 1; } }
