@@ -1,0 +1,118 @@
+$color: #333;
+$stroke: 0.45em;
+$radius: 0.7em;
+
+.auth {
+  width: 10em;
+  height: 10em;
+  position: relative;
+
+  svg { width: 100%; fill: $color; }
+
+  .fingerprint {
+    position: absolute;
+    top: 1em;
+    left: 2em;
+    width: 6em;
+  }
+
+  &:hover .fingerprint {
+    opacity: 0;
+    animation: fingerblink 2s;
+  }
+
+  .ok {
+    position: absolute;
+    top: 3.5em;
+    left: 4em;
+    width: 2em;
+    opacity: 0;
+  }
+
+  &:hover .ok {
+    transition: opacity 0.3s 2s;
+    opacity: 1;
+  }
+
+  .desktop {
+    $w: 8em;
+    $h: 5.5em;
+    $hw: 1.4em;
+    $hh: 1em;
+    $bw: 3.4em;
+
+    // @todo left
+
+    position: absolute;
+    top: 1em;
+    left: (10em - $w) / 2 - $stroke;
+    width: $w;
+    height: $h;
+    border: $stroke solid $color;
+    border-radius: 0.7em;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: $h;
+      left: ($w - $hw) / 2 - $stroke;
+      width: $hw;
+      height: $hh;
+      border: $stroke solid $color;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: $h + $hh + $stroke;
+      left: ($w - $bw) / 2;
+      width: $bw;
+      height: $stroke;
+      background: $color;
+      border-radius: $stroke;
+    }
+  }
+
+  .laptop {
+    $w: 7em;
+    $h: 5em;
+    $bw: 8em;
+    $bh: 0.3em;
+
+    position: absolute;
+    top: 1em;
+    left: (10em - $w) / 2 - $stroke;
+    width: $w;
+    height: $h;
+    border: $stroke solid $color;
+    border-radius: $radius $radius 0 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: $h;
+      left: ($w - $bw) / 2 - $stroke;
+      width: $bw;
+      height: $bh;
+      border: $stroke solid $color;
+      border-radius: 0 0 $radius $radius;
+    }
+  }
+
+  $blink: 0.4s;
+  .desktop, .laptop { opacity: 0; }
+  &:hover {
+    .desktop { animation: deviceblink $blink * 2 2.3s 2; }
+    .laptop  { animation: deviceblink $blink * 2 2.3s + $blink 2; }
+  }
+}
+
+@keyframes fingerblink {
+  from, 40%, 80% { opacity: 1; }
+  20%, 60%, to { opacity: 0; }
+}
+
+@keyframes deviceblink {
+  from, 50%, to { opacity: 0; }
+  5%, 45% { opacity: 1; }
+}
