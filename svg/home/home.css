@@ -43,7 +43,7 @@
   width: 3em; }
 
 .home:hover .info {
-  animation: blinking-home 1.6s 0 infinite; }
+  animation: blinking-home 1.6s 0s infinite; }
 
 .home:hover .eye {
   animation: blinking-home 1.6s 0.4s infinite; }

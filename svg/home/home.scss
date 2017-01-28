@@ -59,7 +59,7 @@ $sqrt2: 1.4142;
   $blink: 0.4s;
 
   &:hover {
-    .info   { animation: blinking-home $blink * 4 0          infinite; }
+    .info   { animation: blinking-home $blink * 4 0s         infinite; }
     .eye    { animation: blinking-home $blink * 4 $blink     infinite; }
     .bulb   { animation: blinking-home $blink * 4 $blink * 2 infinite; }
     .unlock { animation: blinking-home $blink * 4 $blink * 3 infinite; }
