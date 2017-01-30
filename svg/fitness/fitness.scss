@@ -1,0 +1,38 @@
+$size: 10em;
+$color: #333;
+
+.fitness {
+  position: relative;
+  width: $size;
+  height: $size;
+
+  svg { fill: $color; width: 100%; }
+
+  .man {
+    width: 8em;
+    margin: 0 1em;
+  }
+
+  .info {
+    display: none;
+    text-align: center;
+
+    .heart {
+      margin: 1em auto 0.6em;
+      width: 4em;
+      height: 4em;
+
+      svg { height: 100%; }
+    }
+
+    span {
+      color: $color;
+      font: bold 2em sans-serif;
+    }
+  }
+
+  &:hover {
+    .man { display: none; }
+    .info { display: block; }
+  }
+}

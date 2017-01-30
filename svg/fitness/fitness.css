@@ -1,0 +1,26 @@
+.fitness {
+  position: relative;
+  width: 10em;
+  height: 10em; }
+  .fitness svg {
+    fill: #333;
+    width: 100%; }
+  .fitness .man {
+    width: 8em;
+    margin: 0 1em; }
+  .fitness .info {
+    display: none;
+    text-align: center; }
+    .fitness .info .heart {
+      margin: 1em auto 0.6em;
+      width: 4em;
+      height: 4em; }
+      .fitness .info .heart svg {
+        height: 100%; }
+    .fitness .info span {
+      color: #333;
+      font: bold 2em sans-serif; }
+  .fitness:hover .man {
+    display: none; }
+  .fitness:hover .info {
+    display: block; }
