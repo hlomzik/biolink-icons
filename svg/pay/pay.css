@@ -1,30 +1,33 @@
-.signal {
+.pay .signal {
   position: absolute;
   left: -4em;
   width: 11em;
-  opacity: 0; }
+  height: 7em;
+  opacity: 0;
+  background-size: contain;
+  background-repeat: no-repeat; }
 
-.signal svg {
+.pay .signal1 {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20200%20130%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dwidth%3D%226px%22%20d%3D%22M%2040%2050%20a%2021%2E213%2021%2E213%200%200%200%200%2030%20M%20160%2050%20a%2021%2E213%2021%2E213%200%200%201%200%2030%22%2F%3E%3C%2Fsvg%3E"); }
+
+.pay .signal2 {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20200%20130%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dwidth%3D%226px%22%20d%3D%22M%2030%2040%20a%2035%2E355%2035%2E355%200%200%200%200%2050%20M%20170%2040%20a%2035%2E355%2035%2E355%200%200%201%200%2050%22%2F%3E%3C%2Fsvg%3E"); }
+
+.pay .signal3 {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20200%20130%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dwidth%3D%226px%22%20d%3D%22M%2020%2030%20a%2049%2E497%2049%2E497%200%200%200%200%2070%20M%20180%2030%20a%2049%2E497%2049%2E497%200%200%201%200%2070%22%2F%3E%3C%2Fsvg%3E"); }
+
+.pay .signal svg {
   width: 100%;
-  fill: none;
-  stroke-width: 6px;
-  stroke: #333;
-  stroke-linecap: round; }
+  fill: none; }
 
-@keyframes signal {
-  from, 70%, to {
-    opacity: 0; }
-  30% {
-    opacity: 1; } }
-
-.band, .card:hover {
+.pay .band, .pay .card:hover {
   border: 0.45em solid #333;
   width: 3em;
   height: 7em;
   margin: 1em 5em;
   border-radius: 1em;
   position: relative; }
-  .band::before, .card:hover::before {
+  .pay .band::before, .pay .card:hover::before {
     content: '';
     position: absolute;
     top: -1em;
@@ -33,7 +36,7 @@
     height: 1em;
     background: #333;
     box-shadow: 0 8em #333; }
-  .band::after, .card:hover::after {
+  .pay .band::after, .pay .card:hover::after {
     content: '$';
     position: absolute;
     top: 25%;
@@ -48,26 +51,26 @@
     line-height: 0.8em;
     color: #333;
     transform: scale(1, 1); }
-  .band .signal1, .card:hover .signal1 {
+  .pay .band .signal1, .pay .card:hover .signal1 {
     animation: signal 0.8s 0.6s infinite; }
-  .band .signal2, .card:hover .signal2 {
+  .pay .band .signal2, .pay .card:hover .signal2 {
     animation: signal 0.8s 0.8s infinite; }
-  .band .signal3, .card:hover .signal3 {
+  .pay .band .signal3, .pay .card:hover .signal3 {
     animation: signal 0.8s 1s infinite; }
 
-.card, .band:hover {
+.pay .card, .pay .band:hover {
   border: 0.45em solid #333;
   width: 10.5em;
   height: 7em;
   margin: 1em 1.25em;
   border-radius: 1em;
   position: relative; }
-  .card::before, .band:hover::before {
+  .pay .card::before, .pay .band:hover::before {
     content: '';
     top: 0;
     height: 0;
     box-shadow: 0 7em transparent; }
-  .card::after, .band:hover::after {
+  .pay .card::after, .pay .band:hover::after {
     content: '';
     display: block;
     position: absolute;
@@ -80,17 +83,23 @@
     box-shadow: 0 0 transparent;
     transform: scale(1, -1); }
 
-.band, .card {
+.pay .band, .pay .card {
   transition: all 0.6s; }
 
-.band::before, .card:hover::before {
+.pay .band::before, .pay .card:hover::before {
   transition: all 0.4s 0.2s; }
 
-.band:hover::before, .card::before {
+.pay .band:hover::before, .pay .card::before {
   transition: all 0.4s; }
 
-.band::after, .card:hover::after {
+.pay .band::after, .pay .card:hover::after {
   transition: all 0.4s, background 0.2s; }
 
-.band:hover::after, .card::after {
+.pay .band:hover::after, .pay .card::after {
   transition: all 0.4s, background 0.2s; }
+
+@keyframes signal {
+  from, 70%, to {
+    opacity: 0; }
+  30% {
+    opacity: 1; } }
