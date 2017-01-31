@@ -1,58 +1,38 @@
 .home {
   position: relative;
   width: 10em;
-  height: 10em; }
-
-.home svg {
-  width: 100%; }
-
-.home::before {
-  content: '';
-  position: absolute;
-  top: 2.28222em;
-  left: 2.33222em;
-  width: 4.53557em;
-  height: 4.53557em;
-  transform: rotate(45deg);
-  border: 0.4em solid #333;
-  border-color: #333 transparent transparent #333; }
-
-.home::after {
-  content: '';
-  position: absolute;
-  top: 4.25em;
-  left: 2.1em;
-  width: 5em;
-  height: 4em;
-  border: 0.4em solid #333;
-  border-top: none; }
-
-.home .info, .home .bulb, .home .eye, .home .unlock {
-  position: absolute;
-  top: 4em;
-  left: 4em;
-  width: 2em;
-  opacity: 0; }
-
-.home .info {
-  opacity: 1; }
-
-.home .eye {
-  top: 4.5em;
-  left: 3.5em;
-  width: 3em; }
-
-.home:hover .info {
-  animation: blinking-home 1.6s 0s infinite; }
-
-.home:hover .eye {
-  animation: blinking-home 1.6s 0.4s infinite; }
-
-.home:hover .bulb {
-  animation: blinking-home 1.6s 0.8s infinite; }
-
-.home:hover .unlock {
-  animation: blinking-home 1.6s 1.2s infinite; }
+  height: 10em;
+  background: none no-repeat center;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%22%2D2%20%2D2%2090%2080%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dwidth%3D%224%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dlinejoin%3D%22round%22%20d%3D%22M0%2E8%2C37%2E44l42%2D36%2E7%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dwidth%3D%224%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dlinejoin%3D%22round%22%20d%3D%22M84%2E8%2C37%2E44l%2D42%2D36%2E7%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dwidth%3D%224%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dlinejoin%3D%22round%22%20d%3D%22M9%2E8%2C29%2E5v47%2E2%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dwidth%3D%224%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dlinejoin%3D%22round%22%20d%3D%22M75%2E8%2C76%2E7v%2D47%2E2%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dwidth%3D%224%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dlinejoin%3D%22round%22%20d%3D%22M10%2E1%2C76%2E7h65%2E4%22%2F%3E%3C%2Fsvg%3E"); }
+  .home svg {
+    width: 100%; }
+  .home .info, .home .bulb, .home .eye, .home .unlock {
+    position: absolute;
+    top: 4em;
+    left: 4em;
+    width: 2em;
+    height: 3em;
+    opacity: 0;
+    background: none no-repeat center; }
+  .home .info {
+    opacity: 1;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%204%2016%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%222%22%20cy%3D%222%22%20r%3D%222%22%2F%3E%3Cpath%20d%3D%22M2%2C6C0%2E9%2C6%2C0%2C6%2E9%2C0%2C8v6c0%2C1%2E1%2C0%2E9%2C2%2C2%2C2s2%2D0%2E9%2C2%2D2V8C4%2C6%2E9%2C3%2E1%2C6%2C2%2C6z%22%2F%3E%3C%2Fsvg%3E"); }
+  .home .eye {
+    left: 3.5em;
+    width: 3em;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20499%20340%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M250%2C105c%2D36%2C0%2D65%2C29%2D65%2C65c0%2C36%2C29%2C65%2C65%2C65c36%2C0%2C65%2D29%2C65%2D65C315%2C134%2C286%2C105%2C250%2C105z%22%2F%3E%3Cpath%20d%3D%22M494%2C160C444%2C61%2C350%2C0%2C250%2C0S55%2C61%2C5%2C160L0%2C170l5%2C9c50%2C99%2C144%2C160%2C245%2C160s194%2D61%2C245%2D160l5%2D9L494%2C160z%20%20%20%20%20%20%20%20%20M250%2C298c%2D82%2C0%2D158%2D49%2D203%2D128C91%2C91%2C168%2C42%2C250%2C42S408%2C91%2C452%2C170C408%2C249%2C331%2C298%2C250%2C298z%22%2F%3E%3C%2Fsvg%3E"); }
+  .home .bulb {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20600%20900%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M583%2C189C543%2C74%2C428%2C0%2C302%2C0c%2D12%2C0%2D23%2C1%2D35%2C2C187%2C10%2C120%2C44%2C68%2C100c%2D86%2C94%2D86%2C233%2D25%2C332%20%20%20%20%20%20%20%20%20c19%2C32%2C42%2C61%2C64%2C91c27%2C39%2C43%2C82%2C43%2C128c0%2C20%2C19%2C37%2C43%2C37c13%2C0%2C180%2C1%2C207%2C1h3c28%2C0%2C46%2D17%2C46%2D42%20%20%20%20%20%20%20%20%20c0%2D6%2C1%2D12%2C1%2D18c4%2D43%2C23%2D82%2C49%2D117c17%2D23%2C35%2D45%2C50%2D70C601%2C362%2C614%2C277%2C583%2C189L583%2C189z%20M492%2C405%20%20%20%20%20%20%20%20%20c%2D9%2C16%2D21%2C31%2D34%2C48l%2D14%2C19c%2D37%2C51%2D57%2C98%2D62%2C148H218c%2D6%2D48%2D24%2D94%2D55%2D136c%2D7%2D11%2D15%2D21%2D23%2D31%20%20%20%20%20%20%20%20%20c%2D14%2D19%2D28%2D38%2D39%2D57c%2D40%2D66%2D52%2D172%2C17%2D249C160%2C102%2C211%2C76%2C274%2C70c9%2D1%2C17%2D2%2C27%2D2c98%2C0%2C187%2C59%2C217%2C142%20%20%20%20%20%20%20%20%20C542%2C278%2C534%2C342%2C492%2C405L492%2C405z%20M414%2C735H187c%2D17%2C0%2D32%2C13%2D32%2C29c0%2C17%2C15%2C30%2C32%2C30h227c17%2C0%2C32%2D13%2C32%2D30%20%20%20%20%20%20%20%20%20C446%2C749%2C432%2C735%2C414%2C735L414%2C735z%20M312%2C899c41%2D5%2C73%2D25%2C95%2D58H194C216%2C874%2C265%2C905%2C312%2C899z%22%2F%3E%3C%2Fsvg%3E"); }
+  .home .unlock {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%2016%2021%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M14%2C7V6c0%2D3%2E4%2D2%2E6%2D6%2D6%2D6C5%2E2%2C0%2C2%2E7%2C2%2C2%2E1%2C4%2E8l2%2C0%2E4C4%2E5%2C3%2E3%2C6%2E1%2C2%2C8%2C2c2%2E2%2C0%2C4%2C1%2E8%2C4%2C4v1H2C0%2E9%2C7%2C0%2C7%2E9%2C0%2C9v10%20%20%20%20%20%20%20%20%20c0%2C1%2E1%2C0%2E9%2C2%2C2%2C2h12c1%2E1%2C0%2C2%2D0%2E9%2C2%2D2V9C16%2C7%2E9%2C15%2E1%2C7%2C14%2C7z%20M14%2C19H2V9h12V19z%22%2F%3E%3Ccircle%20cx%3D%228%22%20cy%3D%2214%22%20r%3D%222%22%2F%3E%3C%2Fsvg%3E"); }
+  .home:hover .info {
+    animation: blinking-home 1.6s 0s infinite; }
+  .home:hover .eye {
+    animation: blinking-home 1.6s 0.4s infinite; }
+  .home:hover .bulb {
+    animation: blinking-home 1.6s 0.8s infinite; }
+  .home:hover .unlock {
+    animation: blinking-home 1.6s 1.2s infinite; }
 
 @keyframes blinking-home {
   from, 15%, to {
