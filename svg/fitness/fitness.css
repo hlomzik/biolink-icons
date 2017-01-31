@@ -21,6 +21,26 @@
     .fitness .info span {
       color: #333;
       font: bold 2em sans-serif; }
+    .fitness .info .speed1 {
+      position: absolute;
+      animation: fitness-speed-1 4s infinite; }
+    .fitness .info .speed2 {
+      opacity: 0;
+      animation: fitness-speed-2 4s infinite; }
+    .fitness .info .digits {
+      height: 1.2em;
+      display: inline-block;
+      overflow: hidden; }
+    .fitness .info .digit {
+      font-size: 1em;
+      display: inline-block;
+      width: 0.56em;
+      vertical-align: top;
+      height: 1.2em;
+      line-height: 1.2em;
+      animation: fitness-digits 8s infinite linear; }
+    .fitness .info .digit:last-child {
+      animation: fitness-digits 0.8s infinite linear; }
   .fitness:hover .man {
     display: none; }
   .fitness:hover .info {
@@ -33,3 +53,21 @@
     transform: scale(0.8); }
   83% {
     transform: scale(0.9); } }
+
+@keyframes fitness-speed-1 {
+  from, 19%, 31%, 49%, 71%, 79%, 91%, to {
+    opacity: 1; }
+  21%, 29%, 51%, 69%, 81%, 89% {
+    opacity: 0; } }
+
+@keyframes fitness-speed-2 {
+  from, 19%, 31%, 49%, 71%, 79%, 91%, to {
+    opacity: 0; }
+  21%, 29%, 51%, 69%, 81%, 89% {
+    opacity: 1; } }
+
+@keyframes fitness-digits {
+  from {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(0, -10.7em); } }

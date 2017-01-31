@@ -32,6 +32,29 @@ $color: #333;
       color: $color;
       font: bold 2em sans-serif;
     }
+
+    .speed1 { position: absolute; animation: fitness-speed-1 4s infinite; }
+    .speed2 { opacity: 0; animation: fitness-speed-2 4s infinite; }
+
+    .digits {
+      height: 1.2em;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .digit {
+      font-size: 1em;
+      display: inline-block;
+      width: 0.56em;
+      vertical-align: top;
+      height: 1.2em;
+      line-height: 1.2em;
+      animation: fitness-digits 8s infinite linear;
+    }
+
+    .digit:last-child {
+      animation: fitness-digits 0.8s infinite linear;
+    }
   }
 
   &:hover {
@@ -44,4 +67,23 @@ $color: #333;
   from, 30%, 65%, 75%, 90%, to { transform: scale(1); }
   48%, 52% { transform: scale(0.8); } // first strong beat
   83% { transform: scale(0.9); } // second fast beat
+}
+
+@mixin speed-fade ($opacity) {
+  from, 19%, 31%, 49%, 71%, 79%, 91%, to { opacity: $opacity; }
+  21%, 29%, 51%, 69%, 81%, 89% { opacity: 1 - $opacity; }
+}
+
+@keyframes fitness-speed-1 {
+  @include speed-fade(1);
+}
+
+@keyframes fitness-speed-2 {
+  @include speed-fade(0);
+}
+
+@keyframes fitness-digits {
+  from { transform: translate(0, 0); }
+  // should be 10.8em, but there is some gap needs correction
+  100% { transform: translate(0, -10.7em); }
 }
