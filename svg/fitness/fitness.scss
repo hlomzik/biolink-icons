@@ -22,7 +22,10 @@ $color: #333;
       width: 4em;
       height: 4em;
 
-      svg { height: 100%; }
+      svg {
+        height: 100%;
+        animation: fitness-heartbeat 1s infinite cubic-bezier(0, 0.42, 0.65, 0.65);
+      }
     }
 
     span {
@@ -35,4 +38,10 @@ $color: #333;
     .man { display: none; }
     .info { display: block; }
   }
+}
+
+@keyframes fitness-heartbeat {
+  from, 30%, 65%, 75%, 90%, to { transform: scale(1); }
+  48%, 52% { transform: scale(0.8); } // first strong beat
+  83% { transform: scale(0.9); } // second fast beat
 }

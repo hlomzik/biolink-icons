@@ -16,7 +16,8 @@
       width: 4em;
       height: 4em; }
       .fitness .info .heart svg {
-        height: 100%; }
+        height: 100%;
+        animation: fitness-heartbeat 1s infinite cubic-bezier(0, 0.42, 0.65, 0.65); }
     .fitness .info span {
       color: #333;
       font: bold 2em sans-serif; }
@@ -24,3 +25,11 @@
     display: none; }
   .fitness:hover .info {
     display: block; }
+
+@keyframes fitness-heartbeat {
+  from, 30%, 65%, 75%, 90%, to {
+    transform: scale(1); }
+  48%, 52% {
+    transform: scale(0.8); }
+  83% {
+    transform: scale(0.9); } }
