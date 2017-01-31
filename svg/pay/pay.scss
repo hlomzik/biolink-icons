@@ -1,4 +1,8 @@
+@import '../../node_modules/sassdash/index';
+@import '../../node_modules/sass-svg/index';
+
 $color: #333;
+$sqrt2: 1.4142;
 
 @mixin band {
   border: 0.45em solid $color;
@@ -73,34 +77,63 @@ $color: #333;
   }
 }
 
-.signal {
-  position: absolute;
-  left: -4em;
-  width: 11em;
-  opacity: 0;
-}
-.signal svg {
-  width: 100%;
-  fill: none;
-  stroke-width: 6px;
-  stroke: $color;
-  stroke-linecap: round;
+.pay {
+  .signal {
+    position: absolute;
+    left: -4em;
+    width: 11em;
+    height: 7em;
+    opacity: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @for $i from 1 to 4 {
+    $w: 200;
+    $h: 130;
+    $a: 5 + $i * 10; // arc height
+    $r: $a * $sqrt2; // arc radius
+    $left: $w / 4 - $i * 10;
+    $right: $w * 3 / 4 + $i * 10;
+    $top: $h / 2 - $a;
+
+    .signal#{$i} {
+      @include svg('svg', (
+        viewBox: 0 0 $w $h,
+        width: 100%
+      )) {
+        @include svg('path', (
+          fill: none,
+          stroke: $color,
+          stroke-linecap: round,
+          stroke-width: 6px,
+          d: M $left $top a $r $r 0 0 0 0 $a * 2
+            M $right $top a $r $r 0 0 1 0 $a * 2
+        ));
+      }
+    }
+  }
+
+  .signal svg {
+    width: 100%;
+    fill: none;
+  }
+
+  .band, .card:hover { @include band; }
+  .card, .band:hover { @include card; }
+
+  .band, .card {
+    transition: all 0.6s;
+  }
+
+  .band::before, .card:hover::before { transition: all 0.4s 0.2s; }
+  .band:hover::before, .card::before { transition: all 0.4s; }
+
+  .band::after, .card:hover::after { transition: all 0.4s, background 0.2s; }
+  .band:hover::after, .card::after { transition: all 0.4s, background 0.2s; }
 }
 
 @keyframes signal {
   from, 70%, to { opacity: 0; }
   30% { opacity: 1; }
 }
-
-.band, .card:hover { @include band; }
-.card, .band:hover { @include card; }
-
-.band, .card {
-  transition: all 0.6s;
-}
-
-.band::before, .card:hover::before { transition: all 0.4s 0.2s; }
-.band:hover::before, .card::before { transition: all 0.4s; }
-
-.band::after, .card:hover::after { transition: all 0.4s, background 0.2s; }
-.band:hover::after, .card::after { transition: all 0.4s, background 0.2s; }
