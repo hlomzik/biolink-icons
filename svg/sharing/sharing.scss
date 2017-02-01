@@ -1,39 +1,68 @@
+@import '../../node_modules/sassdash/index';
+@import '../../node_modules/sass-svg/index';
+
 $r: 0.4em;
 $positions: 1.5em 4em 6em 8em 10.5em;
 $size: 12em;
 $ok: 1.6em;
 
-.sharing { width: $size; height: $size; position: relative; }
-.band { width: $size / 4; height: $size; position: absolute; }
-.band.to { right: 0; }
-.band svg { width: 100%; height: 100%; }
-.ok {
-  position: absolute;
-  top: 0;
-  right: nth($positions, 1) - $ok / 4;
-  width: $ok / 2;
-  height: 100%;
-  opacity: 0;
-}
-.ok svg { width: 100%; height: 100%; }
+.sharing {
+  width: $size;
+  height: $size;
+  position: relative;
 
-.sharing:hover .ok {
-  transition: all 0.3s 0.6s;
-  opacity: 1;
-  right: nth($positions, 1) - $ok / 2;
-  width: $ok;
-}
+  .band {
+    width: $size / 4;
+    height: $size;
+    position: absolute;
 
-.sharing:hover .dot {
-  opacity: 0;
-  width: $r * 2;
-  height: $r * 2;
-  transform: translate(-$r, -$r);
-  background: black;
-  position: absolute;
-  left: nth($positions, 1);
-  top: $size / 2;
-  border-radius: 50%;
+    background: none no-repeat center;
+
+    @include svg('svg', ( viewBox: 0 0 202 486 )) {
+      @include svg('path', ( d: 'M154,31V0H48v32C21,34,0,57,0,84v319c0,27,21,50,48,52v32h105v-32c27-03,48-25,48-52V84
+        C202,56,181,34,154,31z M180,94v308c0,17-14,31-31,31H53c-17,0-31-14-31-31V94v-10c0-17,14-31,31-31h96
+        c17,0,31,14,31,31V94z'));
+    }
+  }
+  .band.to { right: 0; }
+
+  .ok {
+    position: absolute;
+    top: 0;
+    right: nth($positions, 1) - $ok / 2;
+    width: $ok;
+    height: 100%;
+    transform: scale(0.5);
+    opacity: 0;
+
+    background: none no-repeat center;
+
+    @include svg('svg', ( viewBox: 0 0 900 760 )) {
+      @include svg('path', ( d: 'M900,104C900,46,854,0,796,0c-32,0-61,15-81,38l0,0l-374,460L180,324l0,0c-19-21-46-33-76-33
+        C46,290,0,337,0,394c0,27,11,52,28,70l0,0L270,727l0,0c19,21,46,33,76,33c33,0,61-15,81-38l0,0l450-553l0,0
+        C891,151,900,129,900,104z'));
+    }
+  }
+
+  &:hover {
+    .ok {
+      transition: all 0.3s 0.6s;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .dot {
+      opacity: 0;
+      width: $r * 2;
+      height: $r * 2;
+      transform: translate(-$r, -$r);
+      background: black;
+      position: absolute;
+      left: nth($positions, 1);
+      top: $size / 2;
+      border-radius: 50%;
+    }
+  }
 }
 
 @for $i from 1 to 5 {
