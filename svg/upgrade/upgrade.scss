@@ -1,0 +1,101 @@
+@import '../../node_modules/sassdash/index';
+@import '../../node_modules/sass-svg/index';
+
+$size: 10em;
+$chip: $size * 0.6;
+$leg: $chip / 4;
+$border: $chip / 10;
+
+.upgrade {
+  position: relative;
+  width: $size;
+  height: $size;
+
+  .chip {
+    position: absolute;
+    left: ($size - $chip) / 2;
+    top: ($size - $chip) / 2;
+    width: $chip;
+    height: $chip;
+    background: none no-repeat center;
+
+    @include svg('svg', ( viewBox: 18 18 64 64 )) {
+      @include svg('path', ( d: 'M77,19.4H23c-2.1,0-3.8,1.7-3.8,3.8v53.9c0,2.1,1.7,3.8,3.8,3.8h54c2.1,0,3.8-1.7,3.8-3.8v-54C80.7,21.1,79,19.4,77,19.4z
+        M76.2,76.3H23.8V23.9h52.4V76.3z' ));
+    }
+
+    .row {
+      transform-origin: $chip/2 $chip/2;
+    }
+
+    .leg {
+      position: absolute;
+      left: $chip + $chip * 1/50;
+      width: $leg;
+      height: $leg * 0.3;
+      background: none no-repeat center;
+
+      @include svg('svg', ( viewBox: 83.5 23.5 16.5 5 )) {
+        @include svg('path', ( d: 'M86,28.4h5.3c0.7,0,1.3-0.3,1.7-0.8h5.5c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5H93c-0.4-0.5-1-0.8-1.7-0.8H86
+          c-1.2,0-2.3,1-2.3,2.3C83.8,27.4,84.8,28.4,86,28.4z'));
+      }
+    }
+
+    @for $j from 1 to 6 {
+      .leg:nth-child(#{$j}) {
+        top: $border + ($j - 1) * ($chip - $border) / 5;
+      }
+    }
+
+    @for $i from 1 to 5 {
+      .row:nth-child(#{$i}) {
+        transform: rotate($i * 90deg);
+      }
+    }
+
+    .rotator {
+      position: absolute;
+      left: $chip / 3;
+      top: $chip / 3;
+      width: $chip / 3;
+      height: $chip / 3;
+      opacity: 0;
+      transition: opacity 0.3s;
+      animation: upgrading-rotating 1s infinite;
+
+      background: none no-repeat center;
+
+      @include svg('svg', ( viewBox: 0 0 52 52 )) {
+	      @include svg('path', ( d: 'M2.9,18.6l11.9-2.4c0.5-0.1,0.6-0.5,0.2-0.8l-3.6-2.9c3.7-4,9-6.4,14.6-6.4c11,0,20,9,20,20h6C52,11.6,40.4,0,26,0
+          C18.5,0,11.6,3.2,6.7,8.6L3.1,5.7C2.7,5.4,2.3,5.5,2.3,6.1L2,17.8C2,18.3,2.4,18.7,2.9,18.6z'));
+	      @include svg('path', ( d: 'M49.1,33.4l-11.9,2.4c-0.5,0.1-0.6,0.5-0.2,0.8l3.6,2.9c-3.7,4-9,6.4-14.6,6.4C15,46,6,37,6,26H0c0,14.4,11.6,26,26,26
+          c7.5,0,14.4-3.2,19.3-8.6l3.5,2.9c0.4,0.4,0.8,0.2,0.8-0.4L50,34.2C50,33.7,49.6,33.3,49.1,33.4z'));
+      }
+    }
+  }
+
+  &:hover {
+    .rotator {
+      opacity: 1;
+    }
+    @for $i from 1 to 5 {
+      @for $j from 1 to 6 {
+        .row:nth-child(#{$i}) {
+          .leg:nth-child(#{$j}) {
+            animation: upgrading-blink #{1 + random() * 10}s #{random() * 15}s infinite;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes upgrading-rotating {
+  from { transform: rotate(0); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes upgrading-blink {
+  from, 20%, to { opacity: 1; }
+  3%, 17% { opacity: 0; }
+}
