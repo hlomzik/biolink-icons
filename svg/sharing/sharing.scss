@@ -1,10 +1,11 @@
 @import '../../node_modules/sassdash/index';
 @import '../../node_modules/sass-svg/index';
 
-$r: 0.4em;
-$positions: 1.5em 4em 6em 8em 10.5em;
-$size: 12em;
-$ok: 1.6em;
+$r: 3.33%;
+// $positions: 1.5em 4em 6em 8em 10.5em;
+$positions: 12.5% 33.3% 50% 66.6% 87.5%;
+$size: 10em;
+$ok: 15%;
 
 .sharing {
   width: $size;
@@ -12,8 +13,8 @@ $ok: 1.6em;
   position: relative;
 
   .band {
-    width: $size / 4;
-    height: $size;
+    width: 25%;
+    height: 100%;
     position: absolute;
 
     background: none no-repeat center;
@@ -29,7 +30,7 @@ $ok: 1.6em;
   .ok {
     position: absolute;
     top: 0;
-    right: nth($positions, 1) - $ok / 2;
+    left: nth($positions, length($positions)) - $ok / 2;
     width: $ok;
     height: 100%;
     transform: scale(0.5);
@@ -55,11 +56,11 @@ $ok: 1.6em;
       opacity: 0;
       width: $r * 2;
       height: $r * 2;
-      transform: translate(-$r, -$r);
+      margin: -$r 0 0 (-$r);
       background: black;
       position: absolute;
       left: nth($positions, 1);
-      top: $size / 2;
+      top: 50%;
       border-radius: 50%;
     }
   }
@@ -73,7 +74,7 @@ $ok: 1.6em;
 }
 
 @keyframes band-sharing {
-  from    { opacity: 0; transform: translate(-$r, -$r) scale(0.5); }
-  8%, 10% { opacity: 1; transform: translate(-$r, -$r) scale(1); }
-  50%, to { opacity: 0; transform: translate(-$r, -$r) scale(0.7); }
+  from    { opacity: 0; transform: scale(0.5); }
+  8%, 10% { opacity: 1; transform: scale(1); }
+  50%, to { opacity: 0; transform: scale(0.7); }
 }

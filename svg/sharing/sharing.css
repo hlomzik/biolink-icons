@@ -1,10 +1,10 @@
 .sharing {
-  width: 12em;
-  height: 12em;
+  width: 10em;
+  height: 10em;
   position: relative; }
   .sharing .band {
-    width: 3em;
-    height: 12em;
+    width: 25%;
+    height: 100%;
     position: absolute;
     background: none no-repeat center;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20202%20486%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M154%2C31V0H48v32C21%2C34%2C0%2C57%2C0%2C84v319c0%2C27%2C21%2C50%2C48%2C52v32h105v%2D32c27%2D03%2C48%2D25%2C48%2D52V84%20%20%20%20%20%20%20%20%20C202%2C56%2C181%2C34%2C154%2C31z%20M180%2C94v308c0%2C17%2D14%2C31%2D31%2C31H53c%2D17%2C0%2D31%2D14%2D31%2D31V94v%2D10c0%2D17%2C14%2D31%2C31%2D31h96%20%20%20%20%20%20%20%20%20c17%2C0%2C31%2C14%2C31%2C31V94z%22%2F%3E%3C%2Fsvg%3E"); }
@@ -13,8 +13,8 @@
   .sharing .ok {
     position: absolute;
     top: 0;
-    right: 0.7em;
-    width: 1.6em;
+    left: 80%;
+    width: 15%;
     height: 100%;
     transform: scale(0.5);
     opacity: 0;
@@ -26,38 +26,38 @@
     transform: scale(1); }
   .sharing:hover .dot {
     opacity: 0;
-    width: 0.8em;
-    height: 0.8em;
-    transform: translate(-0.4em, -0.4em);
+    width: 6.66%;
+    height: 6.66%;
+    margin: -3.33% 0 0 -3.33%;
     background: black;
     position: absolute;
-    left: 1.5em;
-    top: 6em;
+    left: 12.5%;
+    top: 50%;
     border-radius: 50%; }
 
 .sharing:hover .dot1 {
-  left: 1.5em;
+  left: 12.5%;
   animation: band-sharing 1.6s 0.1s; }
 
 .sharing:hover .dot2 {
-  left: 4em;
+  left: 33.3%;
   animation: band-sharing 1s 0.4s; }
 
 .sharing:hover .dot3 {
-  left: 6em;
+  left: 50%;
   animation: band-sharing 1s 0.5s; }
 
 .sharing:hover .dot4 {
-  left: 8em;
+  left: 66.6%;
   animation: band-sharing 1s 0.6s; }
 
 @keyframes band-sharing {
   from {
     opacity: 0;
-    transform: translate(-0.4em, -0.4em) scale(0.5); }
+    transform: scale(0.5); }
   8%, 10% {
     opacity: 1;
-    transform: translate(-0.4em, -0.4em) scale(1); }
+    transform: scale(1); }
   50%, to {
     opacity: 0;
-    transform: translate(-0.4em, -0.4em) scale(0.7); } }
+    transform: scale(0.7); } }
