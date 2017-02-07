@@ -3,28 +3,34 @@
 
 $color: #333;
 
-@mixin top {
-  top: 77%;
-  left: 18%;
-  width: 64%;
-}
+// main base points from svg
+$rail-start-top: 72%;
+$rail-start-left: 38%;
+$rail-joint-top: 77%;
+$rail-joint-left: 34%;
+$rail-end-top: 84.5%;
+$rail-end-left: 28%;
+// ratio (tangent): 10/8
 
-@mixin rails1 {
-  top: 80%;
-  left: 16%;
-  width: 68%;
-}
+// rails positions
+$rail1: 40%;
+$rail2: 50% + $rail1; // to go on the same pace
 
-@mixin rails2 {
-  top: 88%;
-  left: 9%;
-  width: 82%;
-}
+$rail-thickness: 3%;
 
-@mixin bottom {
-  top: 91%;
-  left: 4%;
-  width: 92%;
+// trapezium params
+$rail-top: $rail-start-top;
+$rail-height: $rail-end-top - $rail-start-top;
+$rail-a: 100% - $rail-start-left * 2;
+$rail-b: 100% - $rail-end-left * 2;
+$rail-min-scale: $rail-a / $rail-b;
+
+@mixin rail($percent) {
+  @if not unitless($percent) {
+    $percent: $percent / 100%; // convert percents to ratio
+  }
+  top: $rail-top + $rail-height * $percent;
+  transform: scale($rail-min-scale + (1 - $rail-min-scale) * $percent);
 }
 
 .transport {
@@ -62,25 +68,26 @@ $color: #333;
         c1,1,2,2,4,2c1,0,2,0,3-1C180,237,181,234,179,232z M20,185L29,54C29,46,36,40,44,40h93
         c8,0,14,6,15,14l9,130c-2,5-29,16-70,16S22,189,20,185z'));
     }
-
-    &::before, &::after {
-      content: '';
-      position: absolute;
-      @include rails2;
-      height: 5%;
-      background: $color;
-      transition: all 0.3s;
-      z-index: -1;
-    }
-
-    &::after {
-      @include rails1;
-    }
   }
 
-  &:hover .tram {
-    &::before { animation: transport-rails-2 0.3s 0.6s 2; }
-    &::after  { animation: transport-rails-1 0.3s 0.6s 2; }
+  // change position using `top` and `transform:scale`
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: $rail-end-left;
+    width: $rail-b;
+    height: $rail-thickness;
+    background: $color;
+    transition: all 0.3s;
+    z-index: -1;
+  }
+
+  &::before { @include rail($rail1); }
+  &::after  { @include rail($rail2); }
+
+  &:hover {
+    &::before { animation: transport-rails-1 0.3s 0.6s 2 linear; }
+    &::after  { animation: transport-rails-2 0.3s 0.6s 2 linear; }
   }
 
   .man.in {
@@ -117,21 +124,16 @@ $color: #333;
   }
 }
 
-@keyframes transport-rails-1 {
-  from, to { @include rails1; }
-  10% { @include top; opacity: 1; }
-  11%, 19% { opacity: 0; }
-  20% { @include bottom; opacity: 1; }
-  35% { @include rails2; }
+@mixin move-rail($start) {
+  from, to { @include rail($start); }
+  #{$start - 1%}   { opacity: 1; }
+  #{$start - 0.1%} { opacity: 0; @include rail(0); }
+  #{$start + 0.1%} { opacity: 0; @include rail(1); }
+  #{$start + 1%}   { opacity: 1; }
 }
 
-@keyframes transport-rails-2 {
-  from, to { @include rails2; }
-  40% { @include rails1; }
-  50% { @include top; opacity: 1; }
-  51%, 69% { opacity: 0; }
-  70% { @include bottom; opacity: 1; }
-}
+@keyframes transport-rails-1 { @include move-rail($rail1); }
+@keyframes transport-rails-2 { @include move-rail($rail2); }
 
 @keyframes transport-in-out {
   from, 27%, 73%, 94% { opacity: 1; }
