@@ -10,8 +10,8 @@ $size: 10em;
 
   .hand {
     position: absolute;
-    width: $size * 0.5;
-    height: $size * 0.5;
+    width: $size * 0.6;
+    height: $size * 0.6;
     left: $size * 0.3;
     top: $size * 0.3;
 
@@ -33,8 +33,8 @@ $size: 10em;
   .arrow {
     position: absolute;
     width: $size * 0.2;
-    height: $size * 0.25;
-    left: $size * 0.1;
+    height: $size * 0.3;
+    left: $size * 0.08;
     top: $size * 0.15;
 
     background: none no-repeat center;
@@ -52,15 +52,15 @@ $size: 10em;
 }
 
 @keyframes recognition-arrow {
-  from, 5%, to { top: $size * 0.15; }
-  50% { top: $size * 0.6; }
-  from, 40%, 60%, 80%, to { opacity: 1; }
-  50%, 90% { opacity: 0; }
-  from, 40%, to { transform: scale(1, 1); }
-  60%, 80% { transform: scale(1, -1); }
+  from, 5%, to { top: $size * 0.15; } // some delay to go after finger
+  50%, 53% { top: $size * 0.6; }
+  from, 30%, 50%, 80%, to { opacity: 1; }
+  45%, 49%, 95%, 99% { opacity: 0; }
+  45%, 99% { transform: scale(1, 1); }
+  49%, 95% { transform: scale(1, -1); }
 }
 
 @keyframes recognition-hand {
   from, 90%, to { transform: none; }
-  40% { transform: translate(0.6em, 0.8em) rotate(-25deg); }
+  40%, 45% { transform: translate(0.6em, 0.8em) rotate(-25deg); }
 }

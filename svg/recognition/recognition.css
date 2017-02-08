@@ -4,8 +4,8 @@
   height: 10em; }
   .recognition .hand {
     position: absolute;
-    width: 5em;
-    height: 5em;
+    width: 6em;
+    height: 6em;
     left: 3em;
     top: 3em;
     background: none no-repeat center;
@@ -13,8 +13,8 @@
   .recognition .arrow {
     position: absolute;
     width: 2em;
-    height: 2.5em;
-    left: 1em;
+    height: 3em;
+    left: 0.8em;
     top: 1.5em;
     background: none no-repeat center;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%2050%20110%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M41%2C81C43%2C80%2C47%2C80%2C49%2C81C50%2C83%2C50%2C87%2C49%2C89l%2D20%2C20c%2D2%2C2%2D5%2C2%2D7%2C0l%2D20%2D20%20%20%20%20%20%20%20%20%20C0%2C87%2C0%2C83%2C1%2C81C3%2C80%2C7%2C80%2C9%2C81L20%2C93V5C20%2C2%2C22%2C0%2C25%2C0S30%2C2%2C30%2C5v88L41%2C81z%22%2F%3E%3C%2Fsvg%3E"); }
@@ -26,19 +26,19 @@
 @keyframes recognition-arrow {
   from, 5%, to {
     top: 1.5em; }
-  50% {
+  50%, 53% {
     top: 6em; }
-  from, 40%, 60%, 80%, to {
+  from, 30%, 50%, 80%, to {
     opacity: 1; }
-  50%, 90% {
+  45%, 49%, 95%, 99% {
     opacity: 0; }
-  from, 40%, to {
+  45%, 99% {
     transform: scale(1, 1); }
-  60%, 80% {
+  49%, 95% {
     transform: scale(1, -1); } }
 
 @keyframes recognition-hand {
   from, 90%, to {
     transform: none; }
-  40% {
+  40%, 45% {
     transform: translate(0.6em, 0.8em) rotate(-25deg); } }
