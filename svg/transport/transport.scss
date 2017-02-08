@@ -52,7 +52,7 @@ $rail-min-scale: $rail-a / $rail-b;
 
     background: none no-repeat center;
 
-    @include svg('svg', ( viewBox: 0 0 180 240 )) {
+    @include svg('svg', ( fill: $color, viewBox: 0 0 180 240 )) {
       @include svg('path', ( fill: 'white', d: 'M20,185L29,54C29,46,36,40,44,40h93
         c8,0,14,6,15,14l9,130c-2,5-29,16-70,16S22,189,20,185z'));
       @include svg('path', ( d: 'M145,115l-3-51c0-8-7-14-15-14H53C45,50,39,56,38,64l-3,51C35,129,77,130,90,130S145,129,145,115z
@@ -138,7 +138,9 @@ $rail-min-scale: $rail-a / $rail-b;
 @keyframes transport-in-out {
   from, 27%, 73%, 94% { opacity: 1; }
   30%, 70%, to { opacity: 0; }
+  from { left: -0.5em; }
   10%, 25% { left: 0.2em; }
+  40%, 67% { left: 4em; }
   77%, 90% { left: 7.8em; }
-  to { left: 8em; }
+  to { left: 8.3em; }
 }
