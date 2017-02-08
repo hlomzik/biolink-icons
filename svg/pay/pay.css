@@ -1,102 +1,98 @@
-.pay .signal {
-  position: absolute;
-  left: -4em;
-  width: 11em;
-  height: 7em;
-  opacity: 0;
-  background-size: contain;
-  background-repeat: no-repeat; }
-
-.pay .signal1 {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20200%20130%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dwidth%3D%226px%22%20d%3D%22M%2040%2050%20a%2021%2E213%2021%2E213%200%200%200%200%2030%20M%20160%2050%20a%2021%2E213%2021%2E213%200%200%201%200%2030%22%2F%3E%3C%2Fsvg%3E"); }
-
-.pay .signal2 {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20200%20130%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dwidth%3D%226px%22%20d%3D%22M%2030%2040%20a%2035%2E355%2035%2E355%200%200%200%200%2050%20M%20170%2040%20a%2035%2E355%2035%2E355%200%200%201%200%2050%22%2F%3E%3C%2Fsvg%3E"); }
-
-.pay .signal3 {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20200%20130%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dwidth%3D%226px%22%20d%3D%22M%2020%2030%20a%2049%2E497%2049%2E497%200%200%200%200%2070%20M%20180%2030%20a%2049%2E497%2049%2E497%200%200%201%200%2070%22%2F%3E%3C%2Fsvg%3E"); }
-
-.pay .signal svg {
-  width: 100%;
-  fill: none; }
-
-.pay .band, .pay .card:hover {
-  border: 0.45em solid #333;
-  width: 3em;
-  height: 7em;
-  margin: 1em 5em;
-  border-radius: 1em;
+.pay {
+  width: 10em;
+  height: 10em;
   position: relative; }
-  .pay .band::before, .pay .card:hover::before {
-    content: '';
+  .pay .signal1 {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20200%20130%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dwidth%3D%226px%22%20d%3D%22M%2040%2050%20a%2021%2E213%2021%2E213%200%200%200%200%2030%20M%20160%2050%20a%2021%2E213%2021%2E213%200%200%201%200%2030%22%2F%3E%3C%2Fsvg%3E"); }
+  .pay .signal2 {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20200%20130%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dwidth%3D%226px%22%20d%3D%22M%2030%2040%20a%2035%2E355%2035%2E355%200%200%200%200%2050%20M%20170%2040%20a%2035%2E355%2035%2E355%200%200%201%200%2050%22%2F%3E%3C%2Fsvg%3E"); }
+  .pay .signal3 {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20200%20130%22%20width%3D%22100%25%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke%2Dlinecap%3D%22round%22%20stroke%2Dwidth%3D%226px%22%20d%3D%22M%2020%2030%20a%2049%2E497%2049%2E497%200%200%200%200%2070%20M%20180%2030%20a%2049%2E497%2049%2E497%200%200%201%200%2070%22%2F%3E%3C%2Fsvg%3E"); }
+  .pay .band, .pay:hover .card {
+    border: 0.4em solid #333;
     position: absolute;
-    top: -1em;
-    left: 0.5em;
-    width: 2em;
-    height: 1em;
-    background: #333;
-    box-shadow: 0 8em #333; }
-  .pay .band::after, .pay .card:hover::after {
-    content: '$';
+    top: 1.1em;
+    left: 3.1em;
+    width: 3em;
+    height: 7em;
+    border-radius: 1em;
+    transform: scale(0.8); }
+    .pay .band::before, .pay:hover .card::before {
+      content: '';
+      position: absolute;
+      top: -1em;
+      left: 0.5em;
+      width: 2em;
+      height: 1em;
+      background: #333;
+      box-shadow: 0 8em #333; }
+    .pay .band::after, .pay:hover .card::after {
+      content: '$';
+      position: absolute;
+      top: 25%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: transparent;
+      font-family: monospace;
+      font-size: 5em;
+      font-weight: bold;
+      text-align: center;
+      line-height: 0.8em;
+      color: #333;
+      transform: scale(1, 1); }
+    .pay .band .signal, .pay:hover .card .signal {
+      position: absolute;
+      left: -4em;
+      width: 11em;
+      height: 7em;
+      opacity: 0;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .pay .band .signal1, .pay:hover .card .signal1 {
+      animation: signal 0.8s 0.6s infinite; }
+    .pay .band .signal2, .pay:hover .card .signal2 {
+      animation: signal 0.8s 0.8s infinite; }
+    .pay .band .signal3, .pay:hover .card .signal3 {
+      animation: signal 0.8s 1s infinite; }
+  .pay .card, .pay:hover .band {
+    border: 0.4em solid #333;
     position: absolute;
-    top: 25%;
+    top: 1.6em;
     left: 0;
-    width: 100%;
-    height: 50%;
-    background: transparent;
-    font-family: monospace;
-    font-size: 5em;
-    font-weight: bold;
-    text-align: center;
-    line-height: 0.8em;
-    color: #333;
-    transform: scale(1, 1); }
-  .pay .band .signal1, .pay .card:hover .signal1 {
-    animation: signal 0.8s 0.6s infinite; }
-  .pay .band .signal2, .pay .card:hover .signal2 {
-    animation: signal 0.8s 0.8s infinite; }
-  .pay .band .signal3, .pay .card:hover .signal3 {
-    animation: signal 0.8s 1s infinite; }
-
-.pay .card, .pay .band:hover {
-  border: 0.45em solid #333;
-  width: 10.5em;
-  height: 7em;
-  margin: 1em 1.25em;
-  border-radius: 1em;
-  position: relative; }
-  .pay .card::before, .pay .band:hover::before {
-    content: '';
-    top: 0;
-    height: 0;
-    box-shadow: 0 7em transparent; }
-  .pay .card::after, .pay .band:hover::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 12%;
-    left: 0;
-    width: 100%;
-    height: 28%;
-    font-size: 0.1em;
-    background: #333;
-    box-shadow: 0 0 transparent;
-    transform: scale(1, -1); }
-
-.pay .band, .pay .card {
-  transition: all 0.6s; }
-
-.pay .band::before, .pay .card:hover::before {
-  transition: all 0.4s 0.2s; }
-
-.pay .band:hover::before, .pay .card::before {
-  transition: all 0.4s; }
-
-.pay .band::after, .pay .card:hover::after {
-  transition: all 0.4s, background 0.2s; }
-
-.pay .band:hover::after, .pay .card::after {
-  transition: all 0.4s, background 0.2s; }
+    width: 9.2em;
+    height: 6em;
+    border-radius: 1em;
+    transform: scale(0.9); }
+    .pay .card::before, .pay:hover .band::before {
+      content: '';
+      top: 0;
+      height: 0;
+      box-shadow: 0 7em transparent; }
+    .pay .card::after, .pay:hover .band::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 12%;
+      left: 0;
+      width: 100%;
+      height: 28%;
+      font-size: 0.1em;
+      background: #333;
+      transform: scale(1, -1); }
+    .pay .card .signal, .pay:hover .band .signal {
+      left: 0;
+      width: 0; }
+  .pay .band, .pay .card {
+    transition: all 0.6s; }
+  .pay .band::before, .pay:hover .card::before {
+    transition: all 0.4s 0.2s; }
+  .pay:hover .band::before, .pay .card::before {
+    transition: all 0.4s; }
+  .pay .band::after, .pay:hover .card::after {
+    transition: all 0.4s, background 0.2s; }
+  .pay:hover .band::after, .pay .card::after {
+    transition: all 0.4s, background 0.2s; }
 
 @keyframes signal {
   from, 70%, to {
