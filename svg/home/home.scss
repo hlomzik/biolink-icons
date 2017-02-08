@@ -10,29 +10,22 @@ $color: #333;
   height: $size;
 
   background: none no-repeat center;
-
-  svg { width: 100%; }
-
-  @function line ($d) {
-    @return (
-      fill: none,
-      stroke: $color,
-      stroke-width: 4,
-      stroke-linecap: round,
-      stroke-linejoin: round,
-      d: $d
-    )
-  }
+  background-size: 90%;
 
   @include svg('svg', (
+    fill: none,
+    stroke: $color,
+    stroke-width: 4,
+    stroke-linecap: round,
+    stroke-linejoin: round,
     viewBox: -2 -2 90 80,
     width: 100%
   )) {
-    @include svg('path', line('M0.8,37.44l42-36.7'));
-    @include svg('path', line('M84.8,37.44l-42-36.7'));
-    @include svg('path', line('M9.8,29.5v47.2'));
-    @include svg('path', line('M75.8,76.7v-47.2'));
-    @include svg('path', line('M10.1,76.7h65.4'));
+    @include svg('path', ( d: 'M0.8,37.44l42-36.7' ));
+    @include svg('path', ( d: 'M84.8,37.44l-42-36.7' ));
+    @include svg('path', ( d: 'M9.8,30v46.7' ));
+    @include svg('path', ( d: 'M75.8,76.7v-46.7' ));
+    @include svg('path', ( d: 'M10.1,76.7h65.4' ));
   }
 
   .info, .bulb, .eye, .unlock {
