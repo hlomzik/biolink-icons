@@ -1,8 +1,7 @@
 .fitness {
   position: relative;
   width: 10em;
-  height: 10em;
-  overflow: hidden; }
+  height: 10em; }
   .fitness .man, .fitness .info {
     transition: opacity 0.3s, transform 0.3s; }
   .fitness .man {
