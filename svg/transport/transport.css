@@ -29,9 +29,9 @@
     top: 83.25%;
     transform: scale(0.95455); }
   .transport:hover::before {
-    animation: transport-rails-1 0.3s 0.6s 2 linear; }
+    animation: transport-rails-1 0.3s 1s 3 linear; }
   .transport:hover::after {
-    animation: transport-rails-2 0.3s 0.6s 2 linear; }
+    animation: transport-rails-2 0.3s 1s 3 linear; }
   .transport .man.in {
     position: absolute;
     left: 0;
@@ -42,7 +42,7 @@
     background: none no-repeat center;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20651%20973%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%22362%22%20cy%3D%2281%22%20r%3D%2281%22%2F%3E%3Cpath%20d%3D%22M614%2C428c%2D22%2D4%2D112%2D19%2D117%2D21c%2D6%2D2%2C0%2C0%2D2%2D3c%2D2%2D3%2D80%2D168%2D88%2D177c%2D8%2D9%2D29%2D31%2D58%2D40%20%20%20%20%20%20%20%20%20c%2D30%2D10%2D59%2C6%2D59%2C6s%2D147%2C84%2D157%2C89c%2D10%2C5%2D18%2C22%2D18%2C22L46%2C433C40%2C440%2C37%2C449%2C37%2C459c0%2C23%2C19%2C42%2C42%2C42%20%20%20%20%20%20%20%20%20c20%2C0%2C36%2D14%2C40%2D32l64%2D121l40%2D22c%2D3%2C9%2D40%2C188%2D40%2C188l%2D37%2C212L15%2C882C6%2C891%2C0%2C903%2C0%2C917c0%2C26%2C21%2C48%2C48%2C48%20%20%20%20%20%20%20%20%20c16%2C0%2C30%2D8%2C39%2D20c24%2D28%2C144%2D170%2C156%2D183c13%2D15%2C16%2D23%2C18%2D33c2%2D10%2C23%2D139%2C23%2D139l123%2C123V930h0%20%20%20%20%20%20%20%20%20c2%2C24%2C23%2C43%2C48%2C43c25%2C0%2C46%2D19%2C48%2D43h0c0%2C0%2C0%2D2%2C0%2D4c0%2C0%2C0%2C0%2C0%2D1c0%2C0%2C0%2D1%2C0%2D1c0%2D33%2D1%2D198%2C0%2D235%20%20%20%20%20%20%20%20%20c1%2D42%2D13%2D51%2D17%2D54C484%2C630%2C369%2C508%2C369%2C508l25%2D123c0%2C0%2C33%2C64%2C36%2C72c3%2C7%2C14%2C20%2C25%2C22c11%2C2%2C148%2C30%2C148%2C30%20%20%20%20%20%20%20%20%20l0%2C0c2%2C0%2C4%2C1%2C6%2C1c23%2C0%2C41%2D18%2C41%2D41C651%2C447%2C634%2C430%2C614%2C428z%22%2F%3E%3C%2Fsvg%3E"); }
   .transport:hover .man {
-    animation: transport-in-out 2s 1 alternate; }
+    animation: transport-in-out 3s 1 alternate; }
   .transport .man.out {
     position: absolute;
     left: 8em;
@@ -92,7 +92,7 @@
     left: -0.5em; }
   10%, 25% {
     left: 0.2em; }
-  40%, 67% {
+  45%, 60% {
     left: 4em; }
   77%, 90% {
     left: 7.8em; }
