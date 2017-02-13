@@ -15,7 +15,7 @@ $color: #333;
     width: 6em;
     height: 8em;
     opacity: 1;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s, transform 0.5s;
     
     background: none no-repeat center;
 
@@ -53,6 +53,7 @@ $color: #333;
 
   &:hover .fingerprint {
     opacity: 0;
+    transform: scale(0.2);
   }
 
   .desktop, .laptop, .smartphone, .ok {
@@ -119,7 +120,7 @@ $color: #333;
     }
   }
 
-  $blink: 0.4s;
+  $blink: 0.6s;
   &:hover {
     .desktop    { animation: deviceblink $blink * 3 0.3s infinite; }
     .laptop     { animation: deviceblink $blink * 3 0.3s + $blink infinite; }
