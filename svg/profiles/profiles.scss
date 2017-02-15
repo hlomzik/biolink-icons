@@ -11,10 +11,10 @@ $background: none no-repeat center;
 
   .user {
     position: absolute;
-    top: 1.3em;
-    left: 1em;
-    width: 8em;
-    height: 8em;
+    top: 3%;
+    left: 10%;
+    width: 80%;
+    height: 100%;
     background: $background;
 
     @include svg('svg', ( viewBox: 0 0 536 522 )) {
@@ -71,10 +71,13 @@ $background: none no-repeat center;
   }
 
   .glass {
-    top: 3.2em;
-    left: 3.3em;
-    width: 3.4em;
-    height: 1.5em;
+    top: 28%;
+    left: 30%;
+    width: 40%;
+    height: 20%;
+    // make it bigger and shrink after;
+    // this almost fixes glass position on different zoom levels
+    transform: scale(0.8);
 
     @include svg('svg', ( viewBox: 0 0 470 197 )) {
       @include svg('path', ( d: 'M105,197h-1c-18,0-61-43-84-78c-28-43-20-73-12-87C20,11,44-2,70,0c14,1,24,5,35,13
